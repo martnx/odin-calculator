@@ -1,3 +1,12 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
 .main.div{
     height: 750px;
     border: 1px solid black;
@@ -8,8 +17,8 @@
 }
 
 .calculator-div{
-    height: 500px;
-    width: 600px;
+    height: 400px;
+    width: 500px;
     border: 2px solid black;
     border-radius: 10px;
     
@@ -20,8 +29,26 @@
     height: 64px;
     padding: 8px;
 
+    display: flex;
+
+}
+
+/* Remove the up and down button */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .input {
     font-size: 32px;
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* button div */
+.button-div{
+    background-color: grey;
+
+    display: flex;
 }
