@@ -58,15 +58,18 @@ input::-webkit-inner-spin-button {
 
 /* Im working here to first row */
 /* First row div */
-.first-row{
-    border: 4px solid black;
-    height: 100px;
+.first-row, .second-row, .third-row, .fourth-row, .fifth-row{
+    padding: 4px;
+    border: 1px solid black;
+    height: 64px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /**default**/
+    gap: 4px;
     
 }
 
-.first.row .button{
+.first-row .button, .second-row .button, .third-row .button, .fourth-row .button, .fifth-row .button{
     flex-grow: 1;
+
 }
