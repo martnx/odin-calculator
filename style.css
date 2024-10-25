@@ -8,22 +8,103 @@
   background-color: beige;
 
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   
 }
 
-.input-div{
-
-}
-
+/* The violet box */
 .calculator-div{
   padding: 8px;
   background-color: rgb(149, 151, 190);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.input-div{
+  height: 38px;
+  margin-bottom: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.input.div .input{
+
+}
+
+.input-div .input{
+  font-weight: bold;
+
+  float: left;
+  margin-bottom: 0;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.clear-delete-div{
+  display: flex;
+}
+.clear-delete.div, .clear-div, .delete.div{
+  height: 42px;
+  flex-grow: 1;
+}
+
+.button-div{
+  display: flex;
+  flex-direction: column;
 }
 
 .button-div .button {
-  width: 32px;
-  height: 32px;
+  height: 42px;
+  width: 42px;
+  margin: 1px;
+
 }
+
+/* all the size of the row */
+.button-div .first-row{
+  display: flex;
+}
+
+.button-div .div-row{
+  display: flex;
+  flex-direction: column;
+}
+
+.div-row .second-row, .third-row, .fourth-row, .fifth-row{
+  display: flex;
+}
+
+.div-row .equal-div{
+  display: flex;
+}
+
+.div-row-out{
+  display: flex;
+  align-items: row;
+}
+
+.div-row-out .equal-div{
+  width: 42px;
+  display: flex;
+  margin: 1px;
+}
+
+.div-row-out .equal-div .button-equal{
+  width: 100%;
+}
+
