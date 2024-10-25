@@ -1,86 +1,29 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.main.div{
-    height: 750px;
-    border: 1px solid black;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.calculator-div{
-    /* height: 400px; */
-    width: 500px;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 8px;
-    
-}
-
-/* input div */
-.input-div {
-    height: 64px;
-
-    display: flex;
-
-}
-
-/* Remove the up and down button */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+* {
   margin: 0;
 }
 
-.input {
-    font-size: 32px;
-    flex-grow: 1;
-    text-align: right;
+.main.div{
+  height: 100vh;
+  width: 100%;
+  background-color: beige;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
 }
 
-/* button div */
-.button-div{
-    background-color: rgb(153, 132, 132);
-
-    display: flex;
-    flex-direction: column;
-}
-
-/* all button styles*/
-.button-div .button{
+.input-div{
 
 }
 
-/* Im working here to first row */
-/* First row div */
-.first-row, .second-row, .third-row, .fourth-row, .fifth-row{
-    padding: 4px;
-    height: 64px;
-
-    display: flex;
-    flex-direction: row; /**default**/
-    gap: 4px;
-    
+.calculator-div{
+  padding: 8px;
+  background-color: rgb(149, 151, 190);
 }
 
-.first-row .button, .second-row .button, .third-row .button, .fourth-row .button, .fifth-row .button{
-    flex-grow: 1;
-
-}
-
-/* Div of Equal */
-.equal-div {
-    padding: 4px;
-    border: 1px solid black;
-    height: 64px;
-
-    display: flex;
-    flex-direction: row; /**default**/
-    gap: 4px;
+.button-div .button {
+  width: 32px;
+  height: 32px;
 }
