@@ -1,20 +1,3 @@
-// Selector for allButton div
-const allBtn = document.querySelectorAll('button');
-console.log(allBtn.length);
-for(let i = 0; i < allBtn.length; i++){
-    allBtn[i].addEventListener("click", e =>{
-        const target = e.target
-        switch(target.id){
-            case "button-add": console.log("this is add button"); break;
-            case "button-substract": console.log("this is substract button"); break;
-            case "button-multiply": console.log("this is multiply button"); break;
-            case "button-divide": console.log("this is divide button"); break;                   
-            default:
-                console.log("not yet defined");
-            
-        }
-    });
-}
 
 const resultDiv = document.querySelector('.result-div');
 
@@ -45,3 +28,29 @@ function divide(a, b){
 function operate(a, b){
     return add(a, b);
 }
+
+
+// Selector for allButton div
+const allBtn = document.querySelectorAll('button');
+console.log(allBtn.length);
+for(let i = 0; i < allBtn.length; i++){
+    allBtn[i].addEventListener("click", e =>{
+        const target = e.target
+        switch(target.id){
+            //expression and clear delete   
+            case "button-add": console.log("this is add button"); break;
+
+            case "button-substract": console.log("this is substract button"); break;
+            case "button-multiply": console.log("this is multiply button"); break;
+            case "button-divide": console.log("this is divide button"); break;
+            //number button
+            case "button-one": add = 1; break;
+            case "button-two": add = 2; break;
+            
+            default:
+                console.log("not yet defined");
+        }
+    });
+}
+
+console.log(add);
