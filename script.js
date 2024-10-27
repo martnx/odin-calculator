@@ -40,12 +40,46 @@ for(let i = 0; i < allBtn.length; i++){
             //expression and clear delete   
             case "button-add": console.log("this is add button"); break;
 
-            case "button-substract": console.log("this is substract button"); break;
-            case "button-multiply": console.log("this is multiply button"); break;
-            case "button-divide": console.log("this is divide button"); break;
+            case "button-substract": 
+                console.log("this is substract button"); 
+                break;
+            case "button-multiply": 
+                console.log("this is multiply button"); 
+                break;
+            case "button-divide": 
+                console.log("this is divide button"); 
+                break;
             //number button
-            case "button-one": add = 1; break;
-            case "button-two": add = 2; break;
+            case "button-one": //button 1
+                add = 1; 
+                break;
+            case "button-two": //button 2
+                add = 2; 
+                break;
+            case "button-three": //button 3
+                add = 3; 
+                break;
+            case "button-four": //button 4
+                add = 4; 
+                break;
+            case "button-five": //button 5
+                add = 5; 
+                break;
+            case "button-six": //button 6
+                add = 6; 
+                break;
+            case "button-seven": //button 7
+                add = 7; 
+                break;
+            case "button-eight": //button 8
+                add = 8; 
+                break;
+            case "button-nine": //button 9
+                add = 9; 
+                break;
+            case "button-zero": //button 0
+                add = ; 
+                break;
             
             default:
                 console.log("not yet defined");
