@@ -24,43 +24,52 @@
 }
 
 .input-div{
-  height: 38px;
+  height: 64px;
   margin-bottom: 8px;
 
   display: flex;
   flex-direction: column;
 }
 
-.input.div .input{
+
+/* expression div */
+.input-div .expression-div{
+  background-color: white;
 
 }
 
-.input-div .input{
-  font-weight: bold;
-
-  float: left;
-  margin-bottom: 0;
-
+/* result div */
+.input-div .result-div{
+  background-color: lightgray;
+  text-align: right;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-/* Chrome, Safari, Edge, Opera */
-.input::-webkit-outer-spin-button,
-.input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-/* Firefox */
-.input[type=number] {
-  -moz-appearance: textfield;
-}
-
+/* clear and delete button div here */
 .clear-delete-div{
   display: flex;
+  height: 60px;
+
 }
-.clear-delete.div, .clear-div, .delete.div{
-  height: 42px;
-  flex-grow: 1;
+
+.clear-delete.div, .clear-div, .delete-div{
+  flex-basis: 100%;
+
+}
+
+.clear-delete.div, button{
+  width: 100%;
+  height: 100%;
+
+  font-size: 32px;
+  /* border radius */
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
 }
 
 .button-div{
@@ -69,9 +78,14 @@
 }
 
 .button-div .button {
-  height: 42px;
-  width: 42px;
+  font-size: 32px;
+  height: 64px;
+  width: 64px;
   margin: 1px;
+
+  /* border radius */
+  -webkit-border-radius: 16px;
+   border-radius: 16px;
 
 }
 
@@ -99,12 +113,17 @@
 }
 
 .div-row-out .equal-div{
-  width: 42px;
+  width: 64px;
   display: flex;
   margin: 1px;
+  
 }
 
 .div-row-out .equal-div .button-equal{
   width: 100%;
+  font-size: 32px;
+  /* border radius */
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
 }
 
