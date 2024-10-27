@@ -2,23 +2,21 @@
 const allBtn = document.querySelectorAll('button');
 console.log(allBtn.length);
 for(let i = 0; i < allBtn.length; i++){
-    console.log(i);
     allBtn[i].addEventListener("click", e =>{
         const target = e.target
-        console.log(target);
-        switch(target){
-            case "button-add":
-                console.log("column"); break;
+        switch(target.id){
+            case "button-add": console.log("this is add button"); break;
+            case "button-substract": console.log("this is substract button"); break;
+            case "button-multiply": console.log("this is multiply button"); break;
+            case "button-divide": console.log("this is divide button"); break;                   
+            default:
+                console.log("not yet defined");
+            
         }
     });
 }
 
 const resultDiv = document.querySelector('.result-div');
-
-const addBtn = document.querySelector('#button-add');
-addBtn.addEventListener("click", e =>{
-    console.log(e.type);
-});
 
 //Addition function
 function add(a, b){
