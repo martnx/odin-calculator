@@ -2,13 +2,24 @@ const resultDiv = document.querySelector('.result-div');
 
 //true = first input || false = second number
 let switchNumber = true;
+let firstNum = 0;
+let secondNum = 0;
+let totalContainer = 0;
+
+let firstNumberContainer = "";
+let secondNumberContainer = "";
+
 //function for first number
 function firstNumber(number){
-
+    firstNumberContainer += number
+    resultDiv.textContent += number;
 }
 
+function secondNumber(number){
+    firstNumberContainer += number;
+    resultDiv.textContent += number;
+}
 
-x``
 //Addition function
 function add(a, b){
     let x = a + b;
@@ -35,6 +46,8 @@ function divide(a, b){
 
 function operate(operate){
     let container = 0;
+    if(firstNumberContainer !== "") switchNumber = false;
+    console.log(switchNumber);
     switch(operate){
         case "add":
             container = add(firstNum, secondNum);
@@ -55,6 +68,10 @@ function operate(operate){
     return container;
 }
 
+function equal(number){
+
+}
+
 
 // Selector for allButton div
 const allBtn = document.querySelectorAll('button');
@@ -66,56 +83,61 @@ for(let i = 0; i < allBtn.length; i++){
             //expression and clear delete   
             case "button-add":
                 operate("add");
-                console.log("this is add button"); 
                 break;
             case "button-subtract": 
                 operate("subtract");
-                console.log("this is substract button"); 
                 break;
             case "button-multiply":
                 operate("multiply");
-                console.log("this is multiply button"); 
                 break;
             case "button-divide": 
                 operate("divide");
-                console.log("this is divide button"); 
                 break;
             case "button-equal":
-                console.log(operate());
+                equal();
+                console.log(firstNumberContainer);
                 break;
             //number button
             case "button-one": //button 1
                 if(switchNumber == true) firstNumber("1");
-                else secondNum
+                else secondNumber("1");
                 break;
             case "button-two": //button 2
-                add = 2; 
+                if(switchNumber == true) firstNumber("2");
+                else secondNumber("2");
                 break;
             case "button-three": //button 3
-                add = 3; 
+                if(switchNumber == true) firstNumber("3");
+                else secondNumber("3");
                 break;
             case "button-four": //button 4
-                add = 4; 
+                if(switchNumber == true) firstNumber("4");
+                else secondNumber("4");
                 break;
             case "button-five": //button 5
-                add = 5; 
+                if(switchNumber == true) firstNumber("5");
+                else secondNumber("5");
                 break;
             case "button-six": //button 6
-                add = 6; 
+                if(switchNumber == true) firstNumber("6");
+                else secondNumber("6");
                 break;
             case "button-seven": //button 7
-                add = 7; 
+                if(switchNumber == true) firstNumber("7");
+                else secondNumber("7");
                 break;
             case "button-eight": //button 8
-                add = 8; 
+                if(switchNumber == true) firstNumber("8");
+                else secondNumber("8");
                 break;
             case "button-nine": //button 9
-                add = 9; 
+                if(switchNumber == true) firstNumber("9");
+                else secondNumber("9");
                 break;
             case "button-zero": //button 0
-                add = 0; 
+                if(switchNumber == true) firstNumber("0");
+                else secondNumber("0");
                 break;
-            
             default:
                 console.log("not yet defined");
         }
