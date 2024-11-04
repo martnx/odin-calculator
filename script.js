@@ -8,15 +8,20 @@ let totalContainer = 0;
 
 let firstNumberContainer = "";
 let secondNumberContainer = "";
+let resultContainer = 0;
+let operateContainer = "";
 
 //function for first number
 function firstNumber(number){
     firstNumberContainer += number
     resultDiv.textContent += number;
+    console.log("first number: " + firstNumberContainer);
 }
 
 function secondNumber(number){
-    firstNumberContainer += number;
+
+    resultDiv.textContent = "";
+    secondNumberContainer += number;
     resultDiv.textContent += number;
 }
 
@@ -45,31 +50,55 @@ function divide(a, b){
 }
 
 function operate(operate){
-    let container = 0;
     if(firstNumberContainer !== "") switchNumber = false;
-    console.log(switchNumber);
-    switch(operate){
+    operateContainer = operate;
+    console.log("operate: " + operateContainer);
+}
+
+function clearButton(){
+
+}
+
+function deleteButton(){
+    s
+}
+
+function equal(firstNum, secondNum){
+
+    let container;
+    let firstConvert = parseInt(firstNum);
+    let secondConvert = parseInt(secondNum);
+
+    console.log(typeof firstConvert);
+    console.log(typeof secondConvert);
+
+    switch(operateContainer){
         case "add":
-            container = add(firstNum, secondNum);
+            container = add(firstConvert, secondConvert);
             break;
         case "subtract":
-            container = subtract(firstNum, secondNum);
+            container = subtract(firstConvert, secondConvert);
             break;
         case "multiply":
-            container = multiply(firstNum, secondNum);
+            container = multiply(firstConvert, secondConvert);
             break;
-        case "divide":
-            container = divide(firstNum, secondNum);
+        case "divide": 
+            container = divide(firstConvert, secondConvert);
             break;
         default:
             console.log("error! not yet defined!");
-
     }
-    return container;
+    resultContainer = container;
+    firstNumberContainer = container;
+
+    resultDiv.textContent = "";
+    displayResult(resultContainer);;
+
 }
 
-function equal(number){
-
+function displayResult(result){
+    console.log(resultContainer);
+    resultDiv.textContent = result;
 }
 
 
@@ -94,8 +123,15 @@ for(let i = 0; i < allBtn.length; i++){
                 operate("divide");
                 break;
             case "button-equal":
-                equal();
-                console.log(firstNumberContainer);
+                equal(firstNumberContainer, secondNumberContainer);
+                console.log(`first: ${firstNumberContainer}`);
+                console.log(`second: ${secondNumberContainer}`);
+                break;
+            case "button-clear":
+                clearButton();
+                break;
+            case "button-delete":
+                deleteButton();
                 break;
             //number button
             case "button-one": //button 1
