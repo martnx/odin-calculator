@@ -2,9 +2,12 @@ const resultDiv = document.querySelector('.result-div');
 
 //true = first input || false = second number
 let switchNumber = true;
-let firstNum = 0;
-let secondNum = 0;
+
+//already chose a expression
+let alreayChoose = false;
+
 let totalContainer = 0;
+let currentTotal = 0;
 
 let firstNumberContainer = "";
 let secondNumberContainer = "";
@@ -23,6 +26,7 @@ function secondNumber(number){
     resultDiv.textContent = "";
     secondNumberContainer += number;
     resultDiv.textContent += number;
+    console.log("second number: " + secondNumberContainer);
 }
 
 //Addition function
@@ -52,25 +56,35 @@ function divide(a, b){
 function operate(operate){
     if(firstNumberContainer !== "") switchNumber = false;
     operateContainer = operate;
-    console.log("operate: " + operateContainer);
+    console.log("operate: "  +    operateContainer);
+
+    //to evalute the current total i assigned the currentTotal into firstNumberContainer
+    if(currentTotal !== 0) {
+        firstNumberContainer = currentTotal;
+        switchNumber = false
+    };
+    
+
 }
 
 function clearButton(){
-
+    resultDiv.textContent = "";
 }
 
 function deleteButton(){
-    s
+    console.log(resultDiv.length);
 }
 
 function equal(firstNum, secondNum){
 
-    let container;
-    let firstConvert = parseInt(firstNum);
-    let secondConvert = parseInt(secondNum);
+    console.log(`first: ${firstNum}`);
+    console.log(`second: ${secondNum}`);
 
-    console.log(typeof firstConvert);
-    console.log(typeof secondConvert);
+    let container;
+    let firstConvert = parseFloat(firstNum);
+    let secondConvert = parseFloat(secondNum);
+
+    console.log(`${firstConvert} and ${secondConvert}`);
 
     switch(operateContainer){
         case "add":
@@ -91,20 +105,27 @@ function equal(firstNum, secondNum){
     resultContainer = container;
     firstNumberContainer = container;
 
-    resultDiv.textContent = "";
-    displayResult(resultContainer);;
+
+    if((firstConvert !== NaN) && (secondConvert !== NaN)) console.log("nananana"); displayResult(resultContainer);
 
 }
 
 function displayResult(result){
-    console.log(resultContainer);
-    resultDiv.textContent = result;
+    console.log("RESULT : " +  resultContainer);
+
+    //reset everything first and second number
+    firstNumberContainer = "";
+    secondNumberContainer = "";
+
+    currentTotal = result;
+    console.log("CURRENT TOTAL: " + currentTotal);
+    resultDiv.textContent = "";
+    resultDiv.textContent = currentTotal;
 }
 
 
 // Selector for allButton div
 const allBtn = document.querySelectorAll('button');
-console.log(allBtn.length);
 for(let i = 0; i < allBtn.length; i++){
     allBtn[i].addEventListener("click", e =>{
         const target = e.target
@@ -114,18 +135,16 @@ for(let i = 0; i < allBtn.length; i++){
                 operate("add");
                 break;
             case "button-subtract": 
-                operate("subtract");
+                if(firstNumberContainer !== "") operate("subtract");
                 break;
             case "button-multiply":
-                operate("multiply");
+                if(firstNumberContainer !== "") operate("multiply");
                 break;
             case "button-divide": 
-                operate("divide");
+                if(firstNumberContainer !== "") operate("divide");
                 break;
             case "button-equal":
                 equal(firstNumberContainer, secondNumberContainer);
-                console.log(`first: ${firstNumberContainer}`);
-                console.log(`second: ${secondNumberContainer}`);
                 break;
             case "button-clear":
                 clearButton();
@@ -174,6 +193,9 @@ for(let i = 0; i < allBtn.length; i++){
                 if(switchNumber == true) firstNumber("0");
                 else secondNumber("0");
                 break;
+            case "button-decimal":
+                if(switchNumber == true) firstNumber(".");
+                else secondNumber(".");
             default:
                 console.log("not yet defined");
         }
